@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "app"
+name = "Conversion"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["nulladmin1 shrey.deogade@protonmail.com"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -10,6 +10,7 @@ python = "^3.12"
 
 
 [tool.poetry.group.dev.dependencies]
+python = "^3.12"
 pytest = "^8.3.3"
 
 [build-system]
@@ -17,4 +18,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-app = "app.main:main"
+conversion = "conversion.main:main"
