@@ -1,8 +1,11 @@
 import os
-
-from PIL import Image
+import tomllib
+from PIL import Image, UnidentifiedImageError
 
 class ConversionApp:
+    def __init__(self):
+        with open('conversion/supported.toml', 'rb') as f:
+            self.supported_files = tomllib.load(f)
     def img_convert(self, input_file: str, output_file: str) -> None:
         input_image: Image = Image.open(input_file)
         input_image.convert('RGB').save(output_file)
