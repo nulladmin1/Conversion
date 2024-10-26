@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from conversion.main import ConversionApp
+from conversion import ConversionApp
 
 from PIL import UnidentifiedImageError
 
