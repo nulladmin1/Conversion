@@ -3,11 +3,13 @@ import tomllib
 from PIL import Image, UnidentifiedImageError
 
 class ConversionApp:
+    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     def __init__(self):
-        with open('conversion/supported.toml', 'rb') as f:
+        supported_toml = os.path.join(self.ROOT_DIR, "supported.toml")
+        with open(supported_toml, 'rb') as f:
             self.supported_files = tomllib.load(f)
     def img_convert(self, input_file: str, output_file: str) -> None:
-        images = self.supported_files['images']
+        images = self.supported_files['image']
         input_file_ending = input_file.split('.')[-1]
         output_file_ending = output_file.split('.')[-1]
         if input_file_ending not in images or output_file_ending not in images :
